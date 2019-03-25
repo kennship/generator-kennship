@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Ryan Kennedy",
+      "authorEmail": "ryaninvents@users.noreply.github.com",
+      "authorUrl": "https://ryaninvents.com"
+    }
+  }
+}
