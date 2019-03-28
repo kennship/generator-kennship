@@ -50,6 +50,15 @@ Sets up a default CircleCI configuration and contacts CircleCI to follow your pr
 kyo kennship:circle-ci
 ```
 
+### Smaller generators
+
+This package also includes several smaller generators so you can run them independently.
+
+```bash
+# Add an npm badge linking to your package at npmjs.com
+kyo kennship:npm-public
+```
+
 ## License
 
 MIT © [Kennship](https://kennship.com)
