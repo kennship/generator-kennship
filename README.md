@@ -2,11 +2,11 @@
 
 > Common tasks for new projects
 
+[![CircleCI][circleci-image]][circleci-url]
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Coverage percentage][coveralls-image]][coveralls-url]
-[![CircleCI][circle-img]][circle-url]
 
 ## Running
 
@@ -34,7 +34,6 @@ alias kyo="npx -p yo -p generator-kennship yo"
 >
 >     npx -p yo -p generator-kennship yo
 
-
 ### `code-style`
 
 Installs and configures code style tools, such as ESLint and Prettier.
@@ -43,18 +42,34 @@ Installs and configures code style tools, such as ESLint and Prettier.
 kyo kennship:code-style
 ```
 
+### `circle-ci`
+
+Sets up a default CircleCI configuration and contacts CircleCI to follow your project.
+
+```bash
+kyo kennship:circle-ci
+```
+
 ## License
 
 MIT © [Kennship](https://kennship.com)
 
-
 [npm-image]: https://badge.fury.io/js/generator-kennship.svg
+
 [npm-url]: https://npmjs.org/package/generator-kennship
+
 [travis-image]: https://travis-ci.org/ryaninvents/generator-kennship.svg?branch=master
+
 [travis-url]: https://travis-ci.org/ryaninvents/generator-kennship
+
 [daviddm-image]: https://david-dm.org/ryaninvents/generator-kennship.svg?theme=shields.io
+
 [daviddm-url]: https://david-dm.org/ryaninvents/generator-kennship
+
 [coveralls-image]: https://coveralls.io/repos/ryaninvents/generator-kennship/badge.svg
+
 [coveralls-url]: https://coveralls.io/r/ryaninvents/generator-kennship
-[circle-img]: https://img.shields.io/circleci/project/github/kennship/generator-kennship/master.svg
-[circle-url]: https://circleci.com/gh/kennship/generator-kennship
+
+[circleci-image]: https://img.shields.io/circleci/project/github/ryaninvents/generator-kennship/master.svg?logo=circleci
+
+[circleci-url]: https://circleci.com/gh/ryaninvents/generator-kennship

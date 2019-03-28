@@ -2,6 +2,8 @@ const Generator = require('yeoman-generator');
 const sortPkg = require('sort-package-json');
 const Yaml = require('js-yaml');
 const { dirname } = require('path');
+const addBadge = require('../util/add-badge');
+const getDockerImage = require('../util/circleci');
 
 module.exports = class Base extends Generator {
   async updatePackageJson(updater) {
@@ -19,7 +21,8 @@ module.exports = class Base extends Generator {
       this,
       questions.map(({ storeGlobal, skipIfPossible = true, ...q }) => {
         const defaultValue = this._globalConfig.get(q.name);
-        if (defaultValue) earlyResults[q.name] = defaultValue;
+        if (storeGlobal && defaultValue !== undefined)
+          earlyResults[q.name] = defaultValue;
         return {
           default: defaultValue,
           when: skipIfPossible ? !defaultValue : q.when,
@@ -28,29 +31,43 @@ module.exports = class Base extends Generator {
       }),
       ...rest
     );
+    const final = { ...earlyResults, ...result };
     questions.forEach(({ name, storeGlobal }) => {
-      if (storeGlobal) {
-        this._globalConfig.set(name, result[name]);
+      if (storeGlobal && name in final) {
+        this._globalConfig.set(name, final[name]);
       }
     });
-    return { ...result, ...earlyResults };
+    return final;
+  }
+
+  async addReadmeBadge(badgeOpts) {
+    const readmePath = this.destinationPath('README.md');
+    const readme = await this.fs.read(readmePath);
+    await this.fs.write(readmePath, await addBadge(readme, badgeOpts));
+  }
+
+  circleCiFilename() {
+    return this.destinationPath('.circleci/config.yml');
   }
 
   async writeCircleCi(contents) {
-    const circleCiFilename = this.destinationPath('.circleci/config.yml');
+    const circleCiFilename = this.circleCiFilename();
     await this.fs.write(circleCiFilename, `---\n${Yaml.safeDump(contents)}`);
   }
 
-  async updateCircleCi(updater) {
-    let prevConfig = {};
-    const circleCiFilename = this.destinationPath('.circleci/config.yml');
-    if (
-      (await this.fs.exists(dirname(circleCiFilename))) &&
-      (await this.fs.exists(circleCiFilename))
-    ) {
-      prevConfig = Yaml.safeLoad(await this.fs.read(circleCiFilename));
+  async readCircleCi() {
+    const circleCiFilename = this.circleCiFilename();
+    if (!(await this.fs.exists(circleCiFilename))) {
+      return null;
     }
-    const nextConfig = updater(prevConfig);
+    return Yaml.safeLoad(await this.fs.read(circleCiFilename));
+  }
+
+  async updateCircleCi(updater) {
+    let prevConfig = (await this.readCircleCi()) || {};
+    const nextConfig = updater(prevConfig, {
+      getDockerImage: (...args) => getDockerImage(prevConfig, ...args),
+    });
     await this.writeCircleCi(nextConfig);
   }
 };
