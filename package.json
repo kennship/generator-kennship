@@ -15,6 +15,7 @@
     "yeoman-generator"
   ],
   "homepage": "",
+  "bugs": "https://github.com/kennship/generator-kennship/issues",
   "repository": "kennship/generator-kennship",
   "license": "MIT",
   "author": {

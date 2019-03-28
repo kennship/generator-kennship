@@ -5,7 +5,8 @@
 [![CircleCI][circleci-image]][circleci-url]
 [![GitHub repository][github-image]][github-url]
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][travis-image]][travis-url][![Project issues][bugs-image]][bugs-url]
+
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Coverage percentage][coveralls-image]][coveralls-url]
 
@@ -59,6 +60,9 @@ This package also includes several smaller generators so you can run them indepe
 # Add a GitHub badge
 kyo kennship:github-badge
 
+# Add a badge for your bug tracker
+kyo kennship:bugs
+
 # Add an npm badge linking to your package at npmjs.com
 kyo kennship:npm-public
 
@@ -93,3 +97,7 @@ MIT © [Kennship](https://kennship.com)
 [github-image]: https://img.shields.io/github/watchers/kennship/generator-kennship.svg
 
 [github-url]: https://github.com/kennship/generator-kennship
+
+[bugs-image]: https://img.shields.io/github/issues/kennship/generator-kennship.svg?logo=github
+
+[bugs-url]: https://github.com/kennship/generator-kennship/issues
