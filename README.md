@@ -57,6 +57,9 @@ This package also includes several smaller generators so you can run them indepe
 ```bash
 # Add an npm badge linking to your package at npmjs.com
 kyo kennship:npm-public
+
+# Add a badge to let users know that this repo is maintained
+kyo kennship:maintained
 ```
 
 ## License
