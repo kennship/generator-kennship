@@ -1,31 +1,51 @@
-# generator-kennship [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-kennship
+
 > Common tasks for new projects
 
-## Installation
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][daviddm-image]][daviddm-url]
+[![Coverage percentage][coveralls-image]][coveralls-url]
+[![CircleCI][circle-img]][circle-url]
 
-First, install [Yeoman](http://yeoman.io) and generator-kennship using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+## Running
+
+We assume you have pre-installed [node.js](https://nodejs.org/) v10 or later.
+
+We suggest using `npx` to run the generator:
 
 ```bash
-npm install -g yo
-npm install -g generator-kennship
+npx -p yo -p generator-kennship yo kennship
 ```
 
-Then generate your new project:
+It's true that this is slightly verbose, but running it this way will ensure that you have the latest version.
+
+If you like, you can create a shell alias. Add this to your shell profile (either `~/.bashrc` or `~/.zshrc`):
 
 ```bash
-yo kennship
+alias kyo="npx -p yo -p generator-kennship yo"
 ```
 
-## Getting To Know Yeoman
+## Generators
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+> Note: For brevity, these examples use the shell alias defined above.
+>
+> If you have not installed the shell alias, replace `kyo` with:
+>
+>     npx -p yo -p generator-kennship yo
+
+
+### `code-style`
+
+Installs and configures code style tools, such as ESLint and Prettier.
+
+```bash
+kyo kennship:code-style
+```
 
 ## License
 
-MIT © [Ryan Kennedy](https://ryaninvents.com)
+MIT © [Kennship](https://kennship.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-kennship.svg
@@ -36,3 +56,5 @@ MIT © [Ryan Kennedy](https://ryaninvents.com)
 [daviddm-url]: https://david-dm.org/ryaninvents/generator-kennship
 [coveralls-image]: https://coveralls.io/repos/ryaninvents/generator-kennship/badge.svg
 [coveralls-url]: https://coveralls.io/r/ryaninvents/generator-kennship
+[circle-img]: https://img.shields.io/circleci/project/github/kennship/generator-kennship/master.svg
+[circle-url]: https://circleci.com/gh/kennship/generator-kennship
