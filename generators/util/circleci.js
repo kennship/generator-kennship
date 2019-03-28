@@ -1,7 +1,7 @@
 const get = require('lodash/get');
 const deepEqual = require('lodash/isEqual');
 
-export function getDockerImage(config, container) {
+exports.getDockerImage = function getDockerImage(config, container) {
   const jobsHash = get(config, 'jobs', {});
   let match = container;
   Object.keys(jobsHash).some((key) => {
@@ -14,4 +14,4 @@ export function getDockerImage(config, container) {
     return false;
   });
   return match;
-}
+};

@@ -2,6 +2,10 @@ const remark = require('remark');
 const definitions = require('mdast-util-definitions');
 const visit = require('unist-util-visit');
 
+const NEWLINE = {
+  type: 'text',
+  value: '\n',
+};
 function badgeTransform({
   /**
    * Short name of the badge; e.g. 'circle-ci'.
@@ -133,14 +137,7 @@ function badgeTransform({
       badgeBlock.children = [
         ...badgeBlock.children.slice(0, sliceIndex),
         newBadge,
-        ...(sliceIndex >= badgeBlock.length - 1
-          ? []
-          : [
-              {
-                type: 'text',
-                value: '\n',
-              },
-            ]),
+        ...(sliceIndex < badgeBlock.length - 1 ? [] : [NEWLINE]),
         ...badgeBlock.children.slice(sliceIndex),
       ];
 

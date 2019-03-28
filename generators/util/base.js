@@ -1,7 +1,6 @@
 const Generator = require('yeoman-generator');
 const sortPkg = require('sort-package-json');
 const Yaml = require('js-yaml');
-const { dirname } = require('path');
 const addBadge = require('../util/add-badge');
 const getDockerImage = require('../util/circleci');
 
