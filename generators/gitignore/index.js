@@ -3,9 +3,14 @@ const { mergeGitignore } = require('../util/gitignore');
 
 module.exports = class Gitignore extends Generator {
   async writing() {
-    const templateGitignore = (await this.fs.read(
+    const gitignoreFilename = this.destinationPath('.gitignore');
+    if (!(await this.fs.exists(gitignoreFilename))) {
+      await this.fs.write(gitignoreFilename, '');
+    }
+    const gitignoreContents = await this.fs.read(
       this.templatePath('node.gitignore')
-    )).split('\n');
+    );
+    const templateGitignore = gitignoreContents.split('\n');
     await this.updateFileContent(
       this.destinationPath('.gitignore'),
       (original) => {
