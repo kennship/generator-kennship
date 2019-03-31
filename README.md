@@ -8,6 +8,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Project issues][bugs-image]][bugs-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
+[![semantic-release][semantic-release-image]][semantic-release-url]
 [![Coverage percentage][coveralls-image]][coveralls-url]
 
 ## Running
@@ -44,6 +45,14 @@ Sets up a default CircleCI configuration and contacts CircleCI to follow your pr
 
 ```bash
 npx generator-kennship kn:circle-ci
+```
+
+### `release`
+
+Sets up Semantic Release for your project.
+
+```bash
+npx generator-kennship kn:release
 ```
 
 ### Smaller generators
@@ -84,9 +93,9 @@ MIT © [Kennship](https://kennship.com)
 
 [coveralls-url]: https://coveralls.io/r/ryaninvents/generator-kennship
 
-[circleci-image]: https://img.shields.io/circleci/project/github/ryaninvents/generator-kennship/master.svg?logo=circleci
+[circleci-image]: https://img.shields.io/circleci/project/github/kennship/generator-kennship/master.svg?logo=circleci
 
-[circleci-url]: https://circleci.com/gh/ryaninvents/generator-kennship
+[circleci-url]: https://circleci.com/gh/kennship/generator-kennship
 
 [github-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social
 
@@ -95,3 +104,7 @@ MIT © [Kennship](https://kennship.com)
 [bugs-image]: https://img.shields.io/github/issues/kennship/generator-kennship.svg?logo=github
 
 [bugs-url]: https://github.com/kennship/generator-kennship/issues
+
+[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+
+[semantic-release-url]: https://github.com/semantic-release/semantic-release

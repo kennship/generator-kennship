@@ -1,6 +1,6 @@
 {
   "name": "generator-kennship",
-  "version": "0.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "Common tasks for new projects",
   "keywords": [
     "babel",
