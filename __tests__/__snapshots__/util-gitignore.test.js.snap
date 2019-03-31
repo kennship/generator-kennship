@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`util/gitignore should merge two configs 1`] = `
+"myfile.txt
+ourfile.txt
+yourfile.txt
+
+# npm
+*.log
+.npm
+node_modules
+npm-debug.log*
+
+# editors
+*.sw*
+.*~
+
+# terraform
+*.tfstate
+*.tfvars
+.terraform
+"
+`;

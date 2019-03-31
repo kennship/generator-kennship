@@ -39,6 +39,12 @@ module.exports = class Base extends Generator {
     return final;
   }
 
+  async updateFileContent(filename, updater) {
+    const original = await this.fs.read(filename);
+    const newVersion = await updater(original);
+    await this.fs.write(filename, newVersion);
+  }
+
   async addReadmeBadge(badgeOpts) {
     const readmePath = this.destinationPath('README.md');
     const readme = await this.fs.read(readmePath);

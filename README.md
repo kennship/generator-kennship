@@ -55,6 +55,14 @@ Sets up Semantic Release for your project.
 npx generator-kennship kn:release
 ```
 
+### `gitignore`
+
+Applies a default set of `.gitignore` rules to your project. Won't clobber your existing rules, and will try to keep related items together.
+
+```bash
+npx generator-kennship kn:gitignore
+```
+
 ### Smaller generators
 
 This package also includes several smaller generators so you can run them independently.
