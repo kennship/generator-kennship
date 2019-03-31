@@ -46,6 +46,9 @@ function badgeTransform({
             const isParentMatch = linkMatchesBadge(parent);
             if (isDirectMatch && isParentMatch) {
               node.alt = altText;
+              Object.assign(references(node.identifier), {
+                url: imageUrl,
+              });
               badgeExists = true;
             }
             break;
@@ -55,6 +58,7 @@ function badgeTransform({
             const isParentMatch = linkMatchesBadge(parent);
             if (isDirectMatch && isParentMatch) {
               node.alt = altText;
+              node.url = imageUrl;
               badgeExists = true;
             }
             break;

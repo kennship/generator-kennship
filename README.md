@@ -88,7 +88,7 @@ MIT © [Kennship](https://kennship.com)
 
 [circleci-url]: https://circleci.com/gh/ryaninvents/generator-kennship
 
-[github-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg
+[github-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social
 
 [github-url]: https://github.com/kennship/generator-kennship
 
