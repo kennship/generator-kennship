@@ -3,8 +3,8 @@
 > Common tasks for new projects
 
 [![CircleCI][circleci-image]][circleci-url]
-[![GitHub repository][github-image]][github-url]
 [![NPM version][npm-image]][npm-url]
+[![GitHub repository][github-image]][github-url]
 [![Build Status][travis-image]][travis-url]
 [![Project issues][bugs-image]][bugs-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
@@ -88,7 +88,7 @@ MIT © [Kennship](https://kennship.com)
 
 [circleci-url]: https://circleci.com/gh/ryaninvents/generator-kennship
 
-[github-image]: https://img.shields.io/github/watchers/kennship/generator-kennship.svg
+[github-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg
 
 [github-url]: https://github.com/kennship/generator-kennship
 
