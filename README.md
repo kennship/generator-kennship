@@ -63,6 +63,14 @@ Applies a default set of `.gitignore` rules to your project. Won't clobber your 
 npx generator-kennship kn:gitignore
 ```
 
+### `readme`
+
+Creates a README.md for your project.
+
+```bash
+npx generator-kennship kn:readme
+```
+
 ### Smaller generators
 
 This package also includes several smaller generators so you can run them independently.
