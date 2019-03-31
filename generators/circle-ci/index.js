@@ -1,11 +1,9 @@
-const keytar = require('keytar');
 const fetch = require('isomorphic-fetch');
 const hostedGitInfo = require('hosted-git-info');
 const Generator = require('../util/base');
 const get = require('lodash/get');
 const chalk = require('chalk');
 
-const CIRCLECI_SERVICE = 'https://circleci.com';
 const API = 'https://circleci.com/api/v1.1';
 
 function createCircleCiConfig({ context = null, builtFiles = ['./**'] } = {}) {
@@ -158,26 +156,15 @@ module.exports = class CircleCi extends Generator {
     }
 
     let password = null;
-    if (!this.options.newPassword) {
-      password = await keytar.getPassword(
-        CIRCLECI_SERVICE,
-        this.options.username
-      );
-    }
-
     if (!password) {
-      const { newPassword } = await this.prompt([
+      const { circleCiToken: newPassword } = await this.prompt([
         {
-          name: 'newPassword',
+          name: 'circleCiToken',
           type: 'password',
           message: 'CircleCI API token?',
+          storeGlobal: true,
         },
       ]);
-      await keytar.setPassword(
-        CIRCLECI_SERVICE,
-        this.options.username,
-        newPassword
-      );
       password = newPassword;
     }
     this.password = password;

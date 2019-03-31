@@ -1,4 +1,3 @@
-const keytar = require('keytar');
 const fetch = require('isomorphic-fetch');
 const hostedGitInfo = require('hosted-git-info');
 const Generator = require('../util/base');
@@ -8,7 +7,6 @@ const moment = require('moment');
 const execa = require('execa');
 const { normalizeRepository } = require('../util/repo');
 
-const GITHUB_SERVICE = 'https://github.com';
 const API = 'https://api.github.com/graphql';
 const PERSONAL_ACCESS_TOKEN_URL = `https://github.com/settings/tokens`;
 
@@ -63,30 +61,20 @@ module.exports = class GithubRepo extends Generator {
     }
 
     let password = null;
-    if (!this.options.newPassword) {
-      password = await keytar.getPassword(
-        GITHUB_SERVICE,
-        this.options.username
-      );
-    }
 
     if (!password) {
       this.log(
         `If you don't have a GitHub personal access token handy,${''} create one at ${PERSONAL_ACCESS_TOKEN_URL}`
       );
-      const { newPassword } = await this.prompt([
+      const { githubToken } = await this.prompt([
         {
-          name: 'newPassword',
+          name: 'githubToken',
           type: 'password',
           message: 'GitHub personal access token?',
+          storeGlobal: true,
         },
       ]);
-      await keytar.setPassword(
-        GITHUB_SERVICE,
-        this.options.username,
-        newPassword
-      );
-      password = newPassword;
+      password = githubToken;
     }
     this.password = password;
 
