@@ -5,8 +5,8 @@
 [![CircleCI][circleci-image]][circleci-url]
 [![GitHub repository][github-image]][github-url]
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url][![Project issues][bugs-image]][bugs-url]
-
+[![Build Status][travis-image]][travis-url]
+[![Project issues][bugs-image]][bugs-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Coverage percentage][coveralls-image]][coveralls-url]
 

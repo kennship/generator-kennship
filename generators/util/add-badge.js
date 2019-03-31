@@ -80,9 +80,6 @@ function badgeTransform({
       }
 
       const defs = tree.children.filter(({ type }) => type === 'definition');
-      const sliceIndex =
-        badgeBlock.children.length -
-        Math.floor((priority * badgeBlock.children.length) / 100);
       let imageIdentifier = `${name}-image`;
       let urlIdentifier = `${name}-url`;
 
@@ -134,12 +131,28 @@ function badgeTransform({
         }
       }
 
+      // Remove all the newlines; we'll add them back later.
+      badgeBlock.children = badgeBlock.children.filter(
+        ({ type }) => type !== 'text'
+      );
+
+      const sliceIndex =
+        badgeBlock.children.length -
+        Math.floor((priority * badgeBlock.children.length) / 100);
+
+      // Insert the new badge in the right spot...
       badgeBlock.children = [
         ...badgeBlock.children.slice(0, sliceIndex),
         newBadge,
-        ...(sliceIndex < badgeBlock.length - 1 ? [] : [NEWLINE]),
         ...badgeBlock.children.slice(sliceIndex),
-      ];
+      ]
+        // ...then re-insert the newlines.
+        .map((badge, index, list) => {
+          const result = [badge];
+          if (index < list.length - 1) result.push(NEWLINE);
+          return result;
+        })
+        .reduce((a, b) => [...a, ...b], []);
 
       function imageMatchesBadge(image) {
         return image.url === imageUrl;
