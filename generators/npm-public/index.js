@@ -16,7 +16,7 @@ module.exports = class NpmPublic extends Generator {
       altText: 'npm package',
       imageUrl,
       href,
-      priority: 100,
+      priority: 0,
     });
   }
 };

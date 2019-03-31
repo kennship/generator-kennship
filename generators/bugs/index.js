@@ -43,7 +43,7 @@ module.exports = class Bugs extends Generator {
       altText: 'Project issues',
       imageUrl,
       href: bugs,
-      priority: 40,
+      priority: 60,
     });
 
     if (bugs !== pkgJson.bugs) {

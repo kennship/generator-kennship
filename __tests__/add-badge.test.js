@@ -23,7 +23,27 @@ More content
       imageUrl:
         'https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social',
       href: 'https://github.com/kennship/generator-kennship',
-      priority: 25,
+      priority: 75,
+    });
+
+    expect(withBadge).toMatchSnapshot();
+  });
+
+  it('should behave well in a mostly-empty README', async () => {
+    const markdown = `# generator-kennship
+
+> Common tasks for new projects
+
+## Content
+
+Barebones README`;
+    const withBadge = await addBadge(markdown, {
+      name: 'github-stars',
+      altText: 'GitHub stars',
+      imageUrl:
+        'https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social',
+      href: 'https://github.com/kennship/generator-kennship',
+      priority: 75,
     });
 
     expect(withBadge).toMatchSnapshot();

@@ -7,8 +7,8 @@ exports[`util/addBadge should add a badge 1`] = `
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Coverage percentage][coveralls-image]][coveralls-url]
 [![GitHub stars][github-stars-image]][github-stars-url]
+[![Coverage percentage][coveralls-image]][coveralls-url]
 
 More content
 
@@ -19,6 +19,23 @@ More content
 [coveralls-image]: https://coveralls.io/repos/ryaninvents/generator-kennship/badge.svg
 
 [coveralls-url]: https://coveralls.io/r/ryaninvents/generator-kennship
+
+[github-stars-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social
+
+[github-stars-url]: https://github.com/kennship/generator-kennship
+"
+`;
+
+exports[`util/addBadge should behave well in a mostly-empty README 1`] = `
+"# generator-kennship
+
+> Common tasks for new projects
+
+[![GitHub stars][github-stars-image]][github-stars-url]
+
+## Content
+
+Barebones README
 
 [github-stars-image]: https://img.shields.io/github/stars/kennship/generator-kennship.svg?style=social
 

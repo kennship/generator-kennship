@@ -26,8 +26,9 @@ function badgeTransform({
   /**
    * "Priority" from 0 - 100.
    *
-   * Badges with priority 0 are placed at the end; badges with priority
-   * 100 are placed at the beginning.
+   * Badges with priority 0 are placed at the beginning; badges with priority
+   * 100 are placed at the end. All other badges are placed in the middle,
+   * roughly in priority order (depends on insertion order).
    */
 
   priority = 50,
@@ -140,9 +141,9 @@ function badgeTransform({
         ({ type }) => type !== 'text'
       );
 
-      const sliceIndex =
-        badgeBlock.children.length -
-        Math.floor((priority * badgeBlock.children.length) / 100);
+      const sliceIndex = Math.floor(
+        (priority * badgeBlock.children.length) / 100
+      );
 
       // Insert the new badge in the right spot...
       badgeBlock.children = [

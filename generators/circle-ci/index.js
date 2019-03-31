@@ -264,7 +264,7 @@ module.exports = class CircleCi extends Generator {
       altText: 'CircleCI',
       imageUrl: `https://img.shields.io/circleci/project/${repoPath}/master.svg?logo=circleci`,
       href: `https://circleci.com/gh/${repo.user}/${repo.project}`,
-      priority: 95,
+      priority: 5,
     });
 
     if (this.options.setup !== false) {

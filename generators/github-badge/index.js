@@ -31,14 +31,14 @@ module.exports = class GithubBadge extends Generator {
     let imageUrl = null;
     switch (badgeType) {
       case 'stars':
-        imageUrl = `https://img.shields.io/github/stars/${user}/${project}.svg`;
+        imageUrl = `https://img.shields.io/github/stars/${user}/${project}.svg?style=social`;
         break;
       case 'fork':
-        imageUrl = `https://img.shields.io/github/forks/${user}/${project}.svg`;
+        imageUrl = `https://img.shields.io/github/forks/${user}/${project}.svg?style=social`;
         break;
       case 'watchers':
       default:
-        imageUrl = `https://img.shields.io/github/watchers/${user}/${project}.svg`;
+        imageUrl = `https://img.shields.io/github/watchers/${user}/${project}.svg?style=social`;
         break;
     }
     if (!imageUrl) return;
@@ -49,7 +49,7 @@ module.exports = class GithubBadge extends Generator {
       altText: `GitHub repository`,
       imageUrl,
       href,
-      priority: 80,
+      priority: 20,
     });
   }
 };

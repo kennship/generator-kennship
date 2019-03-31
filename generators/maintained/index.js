@@ -9,7 +9,7 @@ module.exports = class Maintained extends Generator {
       name: 'maint',
       altText: `Maintenance status as of ${year}`,
       imageUrl,
-      priority: 0,
+      priority: 100,
     });
   }
 };
