@@ -18,7 +18,7 @@ We assume you have pre-installed [node.js](https://nodejs.org/) v10 or later.
 We suggest using `npx` to run the generator:
 
 ```bash
-npx generator-kennship yo
+npx generator-kennship
 ```
 
 It's true that this is slightly verbose, but running it this way will ensure that you have the latest version.
@@ -45,6 +45,14 @@ Sets up a default CircleCI configuration and contacts CircleCI to follow your pr
 
 ```bash
 npx generator-kennship kn:circle-ci
+```
+
+### `pack`
+
+Sets up [`@pika/pack`][pika-pack] for your project.
+
+```bash
+npx generator-kennship kn:pack
 ```
 
 ### `release`
@@ -124,3 +132,5 @@ MIT © [Kennship](https://kennship.com)
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
+
+[pika-pack]: https://www.pikapkg.com/docs/blog/introducing-pika-pack/
