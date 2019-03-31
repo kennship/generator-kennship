@@ -30,6 +30,7 @@
   "main": "generators/index.js",
   "bin": "bin/generator-kennship.js",
   "scripts": {
+    "build": "echo No build step",
     "lint": "eslint .",
     "semantic-release": "semantic-release",
     "pretest": "npm run -s lint",
