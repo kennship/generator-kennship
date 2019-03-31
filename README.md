@@ -17,7 +17,7 @@ We assume you have pre-installed [node.js](https://nodejs.org/) v10 or later.
 We suggest using `npx` to run the generator:
 
 ```bash
-npx -p yo -p generator-kennship yo kennship
+npx generator-kennship yo
 ```
 
 It's true that this is slightly verbose, but running it this way will ensure that you have the latest version.
@@ -25,23 +25,17 @@ It's true that this is slightly verbose, but running it this way will ensure tha
 If you like, you can create a shell alias. Add this to your shell profile (either `~/.bashrc` or `~/.zshrc`):
 
 ```bash
-alias kyo="npx -p yo -p generator-kennship yo"
+alias kyo="npx generator-kennship"
 ```
 
 ## Generators
-
-> Note: For brevity, these examples use the shell alias defined above.
->
-> If you have not installed the shell alias, replace `kyo` with:
->
->     npx -p yo -p generator-kennship yo
 
 ### `code-style`
 
 Installs and configures code style tools, such as ESLint and Prettier.
 
 ```bash
-kyo kennship:code-style
+npx generator-kennship kn:code-style
 ```
 
 ### `circle-ci`
@@ -49,7 +43,7 @@ kyo kennship:code-style
 Sets up a default CircleCI configuration and contacts CircleCI to follow your project.
 
 ```bash
-kyo kennship:circle-ci
+npx generator-kennship kn:circle-ci
 ```
 
 ### Smaller generators
@@ -58,16 +52,16 @@ This package also includes several smaller generators so you can run them indepe
 
 ```bash
 # Add a GitHub badge
-kyo kennship:github-badge
+npx generator-kennship kn:github-badge
 
 # Add a badge for your bug tracker
-kyo kennship:bugs
+npx generator-kennship kn:bugs
 
 # Add an npm badge linking to your package at npmjs.com
-kyo kennship:npm-public
+npx generator-kennship kn:npm-public
 
 # Add a badge to let users know that this repo is maintained
-kyo kennship:maintained
+npx generator-kennship kn:maintained
 ```
 
 ## License

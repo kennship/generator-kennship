@@ -14,6 +14,7 @@
     "semantic-release",
     "yeoman-generator"
   ],
+  "bin": "bin/generator-kennship.js",
   "homepage": "",
   "bugs": "https://github.com/kennship/generator-kennship/issues",
   "repository": "kennship/generator-kennship",
@@ -24,6 +25,7 @@
     "url": "https://ryaninvents.com"
   },
   "files": [
+    "bin",
     "generators"
   ],
   "main": "generators/index.js",
@@ -91,6 +93,7 @@
     "sort-package-json": "^1.22.0",
     "unist-util-visit": "^1.4.0",
     "yeoman-generator": "^2.0.1",
+    "yo": "^2.0.5",
     "yosay": "^2.0.1"
   },
   "devDependencies": {
