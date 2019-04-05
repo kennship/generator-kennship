@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kennship/generator-kennship/compare/v1.0.0...v1.0.1) (2019-04-05)
+
+
+### Bug Fixes
+
+* **test:** don't clobber package.json ([47caa82](https://github.com/kennship/generator-kennship/commit/47caa82))
+
 # 1.0.0 (2019-03-31)
 
 
