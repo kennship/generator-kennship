@@ -3,6 +3,7 @@ const Generator = require('../util/base');
 module.exports = class Test extends Generator {
   async writing() {
     await this.updatePackageJson((pkg) => ({
+      ...pkg,
       scripts: {
         test: 'jest',
       },
