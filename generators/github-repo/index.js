@@ -7,11 +7,11 @@ const moment = require('moment');
 const execa = require('execa');
 const { normalizeRepository } = require('../util/repo');
 
-const API = 'https://api.github.com/graphql';
+const API = 'https://api.github.com';
 const PERSONAL_ACCESS_TOKEN_URL = `https://github.com/settings/tokens`;
 
 async function gql(password, query, variables) {
-  const response = await fetch(API, {
+  const response = await fetch(`${API}/graphql`, {
     method: 'post',
     headers: {
       Authorization: `Bearer ${password}`,
